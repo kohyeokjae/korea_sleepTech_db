@@ -142,6 +142,7 @@ WHERE
 ALTER TABLE `orders` DROP FOREIGN KEY `orders_ibfk_1`;
 
 DESC `orders`;
+# MUL - 외래 키 지정 시 MySQL이 자동으로 인덱스(index)를 생성 / 외래 키 삭제 후 남아있음
 
 # 2) '기존 테이블의' 외래 키 제약 조건 추가
 ALTER TABLE `orders` ADD CONSTRAINT FOREIGN KEY (member_id) REFERENCES members(member_id);
@@ -163,3 +164,5 @@ CREATE TABLE `users` (
 );
 
 # INSERT INTO `users` VALUES (1, '홍길동', 'qwe123') (2, '고길동', 'qwe123');
+
+DROP DATABASE IF EXISTS `example`;
