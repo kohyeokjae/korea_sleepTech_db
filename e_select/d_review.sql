@@ -98,13 +98,3 @@ FROM
     `members`
 GROUP BY grade
 HAVING MIN(points) >= 100;
-
-
-
-
-
-
-
-
-
-
