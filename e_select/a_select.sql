@@ -185,9 +185,51 @@ FROM
 WHERE
     name LIKE '____';
     
+## 날짜와 시간 조회
+# DATE: 'YYYY-MM-DD'
+# TIME: 'HH:mm:SS'
 
+# =, != (일치, 불일치)
+SELECT * FROM`members`
+WHERE
+    join_date = '2022-01-02';
 
+SELECT * FROM `members`
+WHERE
+    join_date != '2022-01-02';
 
+# between A and B
+SELECT * FROM `members` 
+WHERE
+	join_date BETWEEN '2023-06-01' AND '2025-01-01';
+    
+# cf) 특정 시간 기준 그 이후의 데이터 조회
+# 컬럼명 > 특정 시간
+SELECT 
+    *
+FROM
+    `members`
+WHERE
+    join_date > '2022-01-02';
+    
+# cf) 날짜나 시간의 특정 부분과 일치하는 데이터 조회
+# 연도 일치: year(컬럼명)
+# 월 일치: month(컬럼명)
+# 일 일치: day(컬럼명)
+SELECT * FROM `members` 
+WHERE
+	year(join_date) = '2022';
+
+# 시간: hour()
+# 분: minute()
+# 초: second()
+
+# cf) 현재 날짜나 시간을 기준으로 조회
+# curdate()
+# now()
+SELECT * FROM `members` 
+WHERE
+	join_date < curdate();
 
 
 
