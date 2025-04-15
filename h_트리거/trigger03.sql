@@ -32,17 +32,17 @@ delimiter ;
 # OLD: update, delete 시 변경 상항이 임시로 저장되는 테이블
 # NEW: insert, update, delete 시 방금 삽입 또는 갱신된 행을 참조
 
-select * from player_insert_logs;
+SELECT * FROM player_insert_logs;
 
-insert into players values (106, 'Lee Jun', '타자', '2000-01-01', 1);
+INSERT INTO players VALUES (106, 'Lee Jun', '타자', '2000-01-01', 1);
 
-select * from player_insert_logs;
+SELECT * FROM player_insert_logs;
 
-insert into players 
-values
+INSERT INTO players 
+VALUES
 	(107, 'Lee Jun', '타자', '2000-01-01', 1),
 	(108, 'Choi Jun', '타자', '2000-01-01', 1),
 	(109, 'Park Jun', '타자', '2000-01-01', 1),
 	(110, 'Ko Jun', '타자', '2000-01-01', 1);
     
-select * from player_insert_logs;
+SELECT * FROM player_insert_logs;

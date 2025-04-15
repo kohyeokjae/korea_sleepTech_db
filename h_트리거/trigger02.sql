@@ -91,7 +91,6 @@ DELETE FROM singer
 WHERE
     mem_number >= 7;
     
-SELECT 
-    *
-FROM
-    backup_singer;
+SELECT * FROM backup_singer;
+
+SELECT * FROM singer;
